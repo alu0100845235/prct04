@@ -2,4 +2,17 @@
 
     Es el gestor de versiones de ruby, con el podemos actualizar a nuevas (o no tan nuevas) versiones de ruby manteniendo
     las que ya teníamos, y permitiéndonos seleccionar que versión de ruby es en la que queremos trabajar.
+
+2. ¿Cuál es el resultado de la siguiente operación?
+
+    2.2.1 :001 > puts "Hello world"
+    Hello world
+    => nil 
+    2.2.1 :002 > 
+
+3. ¿Cuáles son las diferencias entre la ejecución del programa "Hola Mundo" con el int́érprete
+de Ruby (ruby helloWorld.rb) y el int́érprete interactivo del ejercicio anterior
+
+    Ruby ejecuta el script correctamente, pero IVM no, porque intenta interpretar el nombre del fichero como si fuese
+    una variable o un método, y como no lo encuentra devuelve un error.
     
