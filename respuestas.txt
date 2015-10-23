@@ -1,0 +1,5 @@
+1. ¿Qué es RVM (Ruby Version Manager)?
+
+    Es el gestor de versiones de ruby, con el podemos actualizar a nuevas (o no tan nuevas) versiones de ruby manteniendo
+    las que ya teníamos, y permitiéndonos seleccionar que versión de ruby es en la que queremos trabajar.
+    
