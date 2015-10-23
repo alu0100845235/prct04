@@ -48,3 +48,303 @@ interactivo y con pry? Escriba la respuesta en fichero creado en el ejercicio 11
     Pry es como ruby, solo muestra lo que se pide que se imprima por pantalla.
     
 
+
+
+Respuestas a las preguntas desde la 48 en adelante:
+---------------------------------------------------
+
+48. ¿Que diferencia hay entre "\t\n" y '\t\n'?
+
+    Con la doble comilla no se escapan los caracteres \,
+    en cambio con la comilla sencilla si.
+    
+    Lo que se ponga entre comillas sencillas no será expándido.
+
+49. ¿Cómo funciona %q? ¿Qué es %q{hello world\n}? ¿Qué es %q{'a' 'b' 'c'}? 
+    
+    %q funciona igual que las comillas sencillas, solo hay que ver los resultados:
+	"hello world\\n"
+	"'a' 'b' 'c'"
+
+50. ¿Cómo funciona %Q? ¿Qué es %Q{hello world\n}? ¿Qué es %Q{'a' 'b' 'c'}?
+    
+    %Q funciona igual que las comillas dobles. Resultados:
+	"hello world\n"
+	"'a' 'b' 'c'"
+
+51. ¿Qué queda en c?
+       "--4--\n--2--\n"
+
+52. ¿Qué queda en c?
+	"--\#{a}--\n--\#{b}--\n"
+
+53. s = "hello". ¿Cuál es el valor de las siguientes expresiones?
+	"he"
+	"o"
+	"hello"
+
+54. ¿Qué queda en g?
+	"hello world"
+
+55. ¿Qué queda en e?
+	"..."
+
+56. ¿Cuál es el resultado?
+	"222"
+
+57. ¿Qué es esto? %w[this is a test]
+	Un array que tiene como elementos cada palabra de la frase introducida (usa los espacios como marcadores de fin de palabra)
+
+58. ¿Qué es esto? %w[\t \n]
+	["\\t", "\\n"]
+
+59. ¿Qué es esto? %W[\t \n]
+	["\t", "\n"]
+
+60. ¿Qué contiene nils? nils = Array.new(3)
+	[nil, nil, nil]
+
+61. ¿Qué contiene nils? nils = Array.new(3, 0)
+	[0, 0, 0]
+
+62. ¿Qué queda en b?
+	[[1, 2], [3, 4]]   Crea un array igual al array que le pasamos.
+
+63. ¿Qué queda en c?
+	[0, 2, 4]
+
+64. ¿Cuál es el resultado de cada una de estas operaciones?
+    
+    [41] pry(main)> a = ('a'..'e').to_a
+    => ["a", "b", "c", "d", "e"]
+    [42] pry(main)> a[1,1]
+    => ["b"]
+    [43] pry(main)> a[-2,2]
+    => ["d", "e"]
+    [44] pry(main)> a[0..2]
+    => ["a", "b", "c"]
+    [45] pry(main)> a[0..1]
+    => ["a", "b"]
+    [46] pry(main)> a[-2..-1]
+    => ["d", "e"]
+    
+65. ¿Cuál es el resultado de cada una de estas operaciones?
+
+    [49] pry(main)> a
+    => ["a", "b", "c", "d", "e"]
+    [50] pry(main)> a[0,2] = %w{A B}
+    => ["A", "B"]
+    [51] pry(main)> a
+    => ["A", "B", "c", "d", "e"]
+    [52] pry(main)> a[2..5] = %w{C D E}
+    => ["C", "D", "E"]
+    [53] pry(main)> a
+    => ["A", "B", "C", "D", "E"]
+    [54] pry(main)> a[0,0] = [1,2,3]
+    => [1, 2, 3]
+    [55] pry(main)> a
+    => [1, 2, 3, "A", "B", "C", "D", "E"]
+    [56] pry(main)> a[0,2] = []
+    => []
+    [57] pry(main)> a
+    => [3, "A", "B", "C", "D", "E"]
+    [58] pry(main)> a[-1,1] = ['Z']
+    => ["Z"]
+    [59] pry(main)> a
+    => [3, "A", "B", "C", "D", "Z"]
+    [60] pry(main)> a[-2,2] = nil
+    => nil
+    [61] pry(main)> a
+    => [3, "A", "B", "C", nil]
+
+66. ¿Cuál es el resultado de cada una de estas operaciones?
+    [62] pry(main)> a = (1..4).to_a
+    => [1, 2, 3, 4]
+    [63] pry(main)> a = a+[4,5]
+    => [1, 2, 3, 4, 4, 5]
+    [64] pry(main)> a += [[6,7,8]]                                                                                               
+    => [1, 2, 3, 4, 4, 5, [6, 7, 8]]
+    [65] pry(main)> a = a + 9
+    TypeError: no implicit conversion of Fixnum into Array
+    from (pry):62:in `+'
+    
+67. ¿Cuál es el resultado de cada una de estas operaciones?
+    [66] pry(main)> x = %w{a b c b a}
+    => ["a", "b", "c", "b", "a"]
+    [67] pry(main)> x = x - %w{b c d}
+    => ["a", "a"]
+    
+68. ¿Cuál es el resultado de cada una de estas operaciones?
+    z = [0]+8
+    TypeError: no implicit conversion of Fixnum into Array
+    from (pry):65:in `+'
+
+69. ¿Cuál es el resultado de cada una de estas operaciones?
+
+    [74] pry(main)> a << 1
+    => [1]
+    [75] pry(main)> a << 2 << 3
+    => [1, 2, 3]
+    [76] pry(main)> a << [4,5,6]
+    => [1, 2, 3, [4, 5, 6]]
+    [77] pry(main)> a.concat [7,8]
+    => [1, 2, 3, [4, 5, 6], 7, 8]
+
+70. ¿Cuál es el resultado de cada una de estas operaciones?
+    
+    [78] pry(main)> a=[1,1,2,2,3,3,4]
+    => [1, 1, 2, 2, 3, 3, 4]
+    [79] pry(main)> b=[5,5,4,4,3,3,2]
+    => [5, 5, 4, 4, 3, 3, 2]
+    [80] pry(main)> c = a | b
+    => [1, 2, 3, 4, 5]
+    [81] pry(main)> d = b | a
+    => [5, 4, 3, 2, 1]
+    [82] pry(main)> e = a & b
+    => [2, 3, 4]
+    [83] pry(main)> f = b & a 
+    => [4, 3, 2]
+
+71. ¿Cuál es el resultado de cada una de estas operaciones?
+
+    [1] pry(main)> a = 1..10
+    => 1..10
+    [2] pry(main)> a.class
+    => Range
+    [3] pry(main)> a.to_a
+    => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    [4] pry(main)> b= 1...10
+    => 1...10
+    [5] pry(main)> b.to_a
+    => [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    [6] pry(main)> b.include? 10
+    => false
+    [7] pry(main)> b.include? 8
+    => true
+    [8] pry(main)> b.step(2) {|x| print "#{x} " }
+    1 3 5 7 9 => 1...10
+    [9] pry(main)> 1..3.to_a
+    NoMethodError: undefined method `to_a' for 3:Fixnum
+    from (pry):9:in `__pry__'
+    
+72. ¿Cuál es el resultado de cada una de estas operaciones?
+
+    [11] pry(main)> r = 0..100
+    => 0..100
+    [12] pry(main)> r = 0...100
+    => 0...100
+    [13] pry(main)> r.member? 50
+    => true
+    [14] pry(main)> r.include? 99.9
+    => true
+    [15] pry(main)> r.member? 99.9
+    => true
+    
+73. ¿Cuál es el resultado de cada una de estas operaciones?
+
+    [36] pry(main)> true.class
+    => TrueClass
+    [37] pry(main)> false.class
+    => FalseClass
+    [38] pry(main)> puts "hello" if 0
+    hello
+    => nil
+    [39] pry(main)> puts "hello" if nil
+    => nil
+    [40] pry(main)> puts "hello" if ""
+    (pry):32: warning: string literal in condition
+    hello
+    => nil
+
+74. ¿Cuál es el resultado de cada una de estas operaciones?
+
+    [41] pry(main)> x = :sym
+    => :sym
+    [42] pry(main)> x.class
+    => Symbol
+    [43] pry(main)> x == 'sym'
+    => false
+    [44] pry(main)> x == :sym
+    => true
+    [45] pry(main)> z= :'a long symbol'
+    => :"a long symbol"
+    [46] pry(main)> z.class
+    => Symbol
+    [47] pry(main)> x == 'sym'.to_sym
+    => true
+    [48] pry(main)> x.to_s == 'sym'                                                                                                                
+    => true
+
+75. ¿Qué resultados se dan?
+    
+    [52] pry(main)> s = "Ruby"
+    => "Ruby"
+    [53] pry(main)> t = s
+    => "Ruby"
+    [54] pry(main)> t[-1] = ""
+    => ""
+    [55] pry(main)> print s
+    Rub=> nil
+    [56] pry(main)> t = "Java"
+    => "Java"
+    [57] pry(main)> print s, t
+    RubJava=> nil
+    [58] pry(main)> 
+    
+76. ¿Cuál es el resultado?
+
+    [58] pry(main)> "%d %s" % [2, "rubies"]
+    => "2 rubies"
+    
+77. ¿Cuáles son los resultados?
+    
+    [59] pry(main)> x, y = 4, 5
+    => [4, 5]
+    [60] pry(main)> z = x > y ? x : y
+    => 5
+    [61] pry(main)> x, y, z = [1,2,3]
+    => [1, 2, 3]
+    
+78. ¿Qué resultados dan las siguientes operaciones?
+
+    [62] pry(main)> x = { :a => 1, :b => 2}                                                                                                        
+    => {:a=>1, :b=>2}
+    [63] pry(main)> x.keys
+    => [:a, :b]
+    [64] pry(main)> x.values
+    => [1, 2]
+    [65] pry(main)> x[:c] = 3
+    => 3
+    [66] pry(main)> x
+    => {:a=>1, :b=>2, :c=>3}
+    [67] pry(main)> x.delete('a')
+    => nil
+    [68] pry(main)> x
+    => {:a=>1, :b=>2, :c=>3}
+    [69] pry(main)> x.delete(:a)
+    => 1
+    [70] pry(main)> x
+    => {:b=>2, :c=>3}
+    [71] pry(main)> x = { :a => 1, :b => 2, :c => 4 }
+    => {:a=>1, :b=>2, :c=>4}
+    [72] pry(main)> x.delete_if { |k,v| v % 2 == 0}
+    => {:a=>1}
+    [73] pry(main)> x
+    => {:a=>1}
+    
+79. ¿Qué hace la siguiente sentencia? counts = Hash.new(0) ¿Qué diferencia hay con la asignación counts = {}?
+    
+    No hay ninguna diferencia, como podemos ver en el siguiente resultado
+    
+    [77] pry(main)> counts = Hash.new(0)
+    => {}
+    [78] pry(main)> counts.class
+    => Hash
+    [79] pry(main)> counts = {}
+    => {}                               // mismo valor
+    [80] pry(main)> counts.class
+    => Hash                             // misma clase
+    
+80. ¿Qué retorna esta expresión regular? 'hello world, hello LPP'.scan /\w+/
+
+    => ["hello", "world", "hello", "LPP"]
